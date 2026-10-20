@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asador Joyca | Restaurante en Carcaixent</title>
+<meta name="description" content="Asador-Restaurante Joyca, en Carrer General Prim 33, Carcaixent. Cocina de temporada con producto de proximidad, carnes a la brasa y postres caseros. Comidas y cenas los fines de semana. Reservas en el 685 74 67 52.">
+<meta name="theme-color" content="#3F2E7E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400;1,6..96,500&family=Karla:wght@400;500;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+  /* Paleta sacada de su Instagram:
+     - piedra y placa: la fachada de piedra con la placa color arena donde va el nombre
+     - mantel: los platos blancos sobre mantel blanco de todas sus fotos
+     - viola: los pensamientos violetas que ponen en los platos (calabaza, postres)
+     - azulejo: el zócalo de azulejo ocre y azul del comedor */
+  :root{
+    --mantel:#FCFCFA;
+    --mantel-2:#F1EFEA;
+    --piedra:#8E8473;
+    --piedra-osc:#5C5447;
+    --placa:#E6DCC6;
+    --tinta:#24211D;
+    --tinta-suave:#5E584F;
+    --viola:#3F2E7E;
+    --viola-claro:#E7E2F4;
+    --azulejo:#B98A2E;
+    --verde:#2F6B3E;
+
+    --script:"Pinyon Script", cursive;
+    --serif:"Bodoni Moda", "Didot", Georgia, serif;
+    --sans:"Karla", system-ui, sans-serif;
+    --gutter:16px;
+    --max:1200px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+  body{margin:0;background:var(--mantel);color:var(--tinta);font-family:var(--sans);font-size:17px;line-height:1.6;padding-bottom:76px}
+  @media (min-width:900px){body{padding-bottom:0}}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--viola);outline-offset:3px;border-radius:3px}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+  @media (min-width:700px){:root{--gutter:32px}}
+  section{scroll-margin-top:72px}
+  h1,h2,h3{margin:0;font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacing:-.01em}
+  .h2{font-size:clamp(34px,5.4vw,58px)}
+  .intro{color:var(--tinta-suave);max-width:36em;margin:14px 0 0;font-size:18px}
+  .bloque{padding:84px 0}
+  @media (min-width:900px){.bloque{padding:120px 0}}
+
+  /* Botones */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:2px;font-family:var(--sans);font-weight:700;font-size:16px;letter-spacing:.02em;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background-color .2s,color .2s;white-space:nowrap}
+  .btn svg{width:19px;height:19px;flex:none}
+  .btn-viola{background:var(--viola);color:#fff}
+  .btn-viola:hover{background:#2f2263}
+  .btn-linea{border-color:currentColor;background:transparent}
+  .btn-linea:hover{background:rgba(36,33,29,.06)}
+  .btn-wa{background:#1F7A4A;color:#fff}
+  .btn-wa:hover{background:#17623b}
+
+  /* Cabecera */
+  .cab{position:sticky;top:0;z-index:40;background:rgba(252,252,250,.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid rgba(36,33,29,.1)}
+  .cab .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px}
+  .marca{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:var(--tinta)}
+  .marca b{font-family:var(--script);font-weight:400;font-size:38px;line-height:1;padding-top:6px}
+  .marca span{font-size:12px;letter-spacing:.08em;color:var(--tinta-suave)}
+  .nav{display:none;gap:28px;font-size:15px;font-weight:500}
+  .nav a{text-decoration:none}
+  .nav a:hover{color:var(--viola)}
+  .cab .btn{min-height:42px;padding:0 18px;font-size:15px;display:none}
+  @media (min-width:960px){.nav{display:flex}.cab .btn{display:inline-flex}}
+
+  /* Hero: la placa de su fachada sobre la piedra, y el plato al lado */
+  .hero{display:grid;background:var(--piedra-osc)}
+  .hero-foto{position:relative;min-height:40vh;overflow:hidden}
+  .hero-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .piedra{position:relative;color:#fff;padding:0 var(--gutter) 48px;
+    background:
+      radial-gradient(ellipse at 20% 0%,rgba(255,255,255,.08),transparent 60%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.045' numOctaves='4' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .55  0 0 0 0 .5  0 0 0 0 .43  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+      var(--piedra-osc)}
+  .placa{position:relative;margin:-56px auto 0;max-width:300px;background:var(--placa);color:#2c2a26;text-align:center;padding:22px 20px 18px;border-radius:3px;box-shadow:0 2px 0 rgba(0,0,0,.08),0 22px 40px -18px rgba(0,0,0,.6)}
+  .placa::before,.placa::after{content:"";position:absolute;top:12px;width:7px;height:7px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff,#9b9384)}
+  .placa::before{left:12px}.placa::after{right:12px}
+  .placa b{display:block;font-family:var(--script);font-weight:400;font-size:clamp(62px,9vw,80px);line-height:.9}
+  .placa i{display:block;height:1px;background:#2c2a26;opacity:.5;margin:8px 18px 8px}
+  .placa span{font-size:14px;letter-spacing:.06em}
+  .hero-texto{max-width:30em;margin:40px auto 0}
+  .hero-texto h1{font-size:clamp(34px,6.4vw,58px);font-style:italic;font-weight:400}
+  .hero-texto p{color:#E9E4D9;margin:16px 0 0;font-size:18px}
+  .hero-botones{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .hero-botones .btn-linea{color:#fff}
+  .hero-botones .btn-linea:hover{background:rgba(255,255,255,.1)}
+  .estado{display:inline-flex;align-items:center;gap:9px;margin-top:26px;font-size:15px;color:#fff;background:rgba(0,0,0,.25);padding:8px 14px;border-radius:2px}
+  .estado::before{content:"";width:9px;height:9px;border-radius:50%;background:#B9B2A4}
+  .estado.abierto::before{background:#5FD38A;box-shadow:0 0 0 4px rgba(95,211,138,.25)}
+  @media (min-width:900px){
+    .hero{grid-template-columns:5fr 7fr;min-height:calc(100vh - 66px)}
+    .hero-foto{order:2;min-height:auto}
+    .piedra{order:1;display:flex;flex-direction:column;justify-content:center;padding:56px 48px}
+    .placa{margin:0 0 0;max-width:360px}
+    .hero-texto{margin:44px 0 0}
+  }
+
+  /* Banda de confianza */
+  .confianza{background:var(--mantel-2);border-bottom:1px solid rgba(36,33,29,.08)}
+  .confianza ul{list-style:none;margin:0 auto;padding:26px var(--gutter);max-width:var(--max);display:grid;grid-template-columns:1fr 1fr;gap:22px 18px}
+  .confianza li{display:flex;flex-direction:column;gap:2px;font-size:15px;color:var(--tinta-suave)}
+  .confianza strong{font-family:var(--serif);font-size:26px;font-weight:400;color:var(--tinta);line-height:1.1}
+  .estrellas{color:var(--azulejo);letter-spacing:2px;font-size:15px}
+  @media (min-width:900px){.confianza ul{grid-template-columns:repeat(5,1fr)}}
+
+  /* Cocina */
+  .estrella{display:grid;gap:32px;margin-top:48px;align-items:center}
+  .estrella figure{margin:0;background:#fff;aspect-ratio:4/3;overflow:hidden}
+  .estrella figure img{width:100%;height:100%;object-fit:cover}
+  .estrella h3{font-size:clamp(30px,4vw,44px);font-style:italic}
+  .estrella p{color:var(--tinta-suave);margin:14px 0 0;max-width:30em}
+  .cita-ig{display:block;margin-top:18px;padding-left:16px;border-left:2px solid var(--viola);color:var(--tinta);font-family:var(--serif);font-style:italic;font-size:19px}
+  .cita-ig small{display:block;font-family:var(--sans);font-style:normal;font-size:13px;color:var(--tinta-suave);margin-top:4px}
+  @media (min-width:900px){.estrella{grid-template-columns:7fr 5fr;gap:56px}}
+
+  .platos{display:grid;grid-template-columns:1fr;gap:40px 28px;margin-top:72px}
+  @media (min-width:620px){.platos{grid-template-columns:1fr 1fr}}
+  @media (min-width:1000px){.platos{grid-template-columns:repeat(3,1fr)}}
+  .plato figure{margin:0;aspect-ratio:1/1;overflow:hidden;background:#fff}
+  .plato img{width:100%;height:100%;object-fit:cover}
+  .plato-cab{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-top:16px;padding-bottom:10px;border-bottom:1px solid rgba(36,33,29,.15)}
+  .plato h3{font-size:23px}
+  .precio{font-family:var(--serif);font-size:20px;white-space:nowrap}
+  .plato p{margin:10px 0 0;color:var(--tinta-suave);font-size:16px}
+  .plato .temp{display:inline-block;margin-top:10px;font-size:13px;color:var(--viola);background:var(--viola-claro);padding:3px 9px;border-radius:2px}
+  .nota-carta{margin-top:48px;color:var(--tinta-suave);font-size:15px;max-width:44em}
+
+  /* Temporada: frases de su propio Instagram */
+  .temporada{background:var(--viola);color:#fff}
+  .temporada .intro{color:#D9D2EE}
+  .anyo{display:grid;gap:2px;margin-top:52px;background:rgba(255,255,255,.18)}
+  .estacion{background:var(--viola);padding:28px 4px 30px 0}
+  .estacion h3{font-size:30px;font-style:italic}
+  .estacion blockquote{margin:14px 0 0;font-size:17px;color:#EDE8FA}
+  .estacion small{display:block;margin-top:10px;font-size:13px;color:#B9AEDD}
+  @media (min-width:900px){.anyo{grid-template-columns:repeat(4,1fr)}.estacion{padding:28px 28px 34px}}
+
+  /* Salón privado */
+  .salon{display:grid;gap:36px;align-items:center}
+  .salon figure{margin:0;aspect-ratio:5/4;overflow:hidden}
+  .salon img{width:100%;height:100%;object-fit:cover}
+  @media (min-width:900px){.salon{grid-template-columns:1fr 1fr;gap:64px}}
+
+  /* Pasos */
+  .pasos{list-style:none;margin:48px 0 0;padding:0;display:grid;gap:30px;counter-reset:p}
+  .pasos li{counter-increment:p;display:grid;grid-template-columns:56px 1fr;gap:4px 16px}
+  .pasos li::before{content:counter(p);grid-row:span 2;font-family:var(--serif);font-size:48px;line-height:1;color:var(--viola)}
+  .pasos h3{font-size:24px}
+  .pasos p{margin:4px 0 0;color:var(--tinta-suave)}
+  @media (min-width:900px){.pasos{grid-template-columns:repeat(3,1fr);gap:40px}}
+
+  /* Reseñas */
+  .resenas{background:var(--mantel-2)}
+  .lista-resenas{display:grid;gap:22px;margin-top:48px}
+  .resena{background:#fff;padding:30px 26px;border-top:3px solid var(--azulejo);margin:0}
+  .resena blockquote{margin:12px 0 0;font-family:var(--serif);font-size:20px;line-height:1.45}
+  .resena figcaption{margin-top:16px;font-size:14px;color:var(--tinta-suave)}
+  @media (min-width:900px){.lista-resenas{grid-template-columns:repeat(3,1fr)}}
+  .ver-google{margin-top:30px}
+
+  /* Galería */
+  .galeria{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:44px}
+  .galeria a{display:block;aspect-ratio:1/1;overflow:hidden;background:#fff}
+  .galeria img{width:100%;height:100%;object-fit:cover;transition:opacity .2s}
+  .galeria a:hover img{opacity:.85}
+  .cab-galeria{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px}
+  .cab-galeria .btn{color:var(--viola)}
+
+  /* Horario y visita */
+  .visita{background:var(--tinta);color:#fff}
+  .visita .intro{color:#C9C3B8}
+  .visita-grid{display:grid;gap:44px;margin-top:48px}
+  @media (min-width:900px){.visita-grid{grid-template-columns:5fr 7fr;gap:64px}}
+  .horario{width:100%;border-collapse:collapse;font-size:17px}
+  .horario th,.horario td{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.14);text-align:left;font-weight:400;vertical-align:top}
+  .horario td{text-align:right;color:#E9E4D9}
+  .horario .cerrado td{color:#8F887C}
+  .horario tr.hoy th,.horario tr.hoy td{color:#fff;font-weight:700}
+  .horario tr.hoy th::after{content:"hoy";margin-left:10px;font-size:12px;font-weight:700;background:var(--viola);color:#fff;padding:2px 8px;border-radius:2px;vertical-align:2px}
+  .datos{margin-top:32px;display:grid;gap:14px;font-size:17px}
+  .datos a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35)}
+  .datos a:hover{border-color:#fff}
+  .datos span{display:block;font-size:14px;color:#9D968A}
+  .mapa{width:100%;min-height:340px;height:100%;border:0;filter:grayscale(.3)}
+  .visita .botones{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .visita .btn-linea{color:#fff}
+
+  /* Pie */
+  .pie{background:#1A1815;color:#A9A296;font-size:15px;padding:48px 0 40px}
+  .pie .wrap{display:grid;gap:22px}
+  .pie .marca{color:#fff}
+  .pie .marca span{color:#A9A296}
+  .pie nav{display:flex;flex-wrap:wrap;gap:10px 22px}
+  .pie a{text-decoration:none}
+  .pie a:hover{color:#fff}
+  @media (min-width:900px){.pie .wrap{grid-template-columns:1fr auto auto;align-items:center;gap:40px}}
+
+  /* Barra móvil */
+  .barra{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom));background:rgba(252,252,250,.97);border-top:1px solid rgba(36,33,29,.12)}
+  .barra .btn{min-height:50px;padding:0 10px}
+  .barra .btn-linea{color:var(--tinta)}
+  @media (min-width:900px){.barra{display:none}}
+
+  /* Franja para el dueño */
+  .duenyo{background:repeating-linear-gradient(-45deg,#FFF8D6 0 18px,#FFF2B8 18px 36px);color:#2a2410;padding:64px 0;border-top:6px dashed #C9A400}
+  .duenyo .aviso{display:inline-block;background:#2a2410;color:#FFF2B8;font-size:14px;padding:6px 12px;border-radius:2px}
+  .duenyo h2{font-family:var(--sans);font-weight:700;font-size:clamp(26px,4vw,36px);margin-top:18px;letter-spacing:0}
+  .duenyo ul{margin:28px 0 0;padding:0;list-style:none;display:grid;gap:16px}
+  .duenyo li{background:rgba(255,255,255,.75);padding:18px 20px;border-left:4px solid #C9A400}
+  .duenyo li b{display:block;font-size:18px;margin-bottom:4px}
+  @media (min-width:900px){.duenyo ul{grid-template-columns:1fr 1fr}}
+  .duenyo button{margin-top:30px;font:700 16px var(--sans);background:#2a2410;color:#FFF2B8;border:0;padding:15px 22px;border-radius:2px;cursor:pointer}
+
+  .edit{transition:background-color .2s,outline-color .2s}
+  body.ver-editables .edit{background:#fff36b!important;color:#222!important;outline:2px dashed #d11;outline-offset:2px}
+</style>
+</head>
+<body>
+
+<header class="cab">
+  <div class="wrap">
+    <a class="marca" href="#inicio" aria-label="Asador Joyca, inicio"><b>Joyca</b><span>Asador - Restaurante</span></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#cocina">Cocina</a>
+      <a href="#temporada">Temporada</a>
+      <a href="#salon">Salón privado</a>
+      <a href="#resenas">Reseñas</a>
+      <a href="#visita">Horario</a>
+    </nav>
+    <a class="btn btn-viola" href="tel:+34685746752">Reservar mesa</a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero" aria-label="Presentación">
+    <div class="hero-foto">
+      <img src="https://images.unsplash.com/photo-1616671276441-2f2c277b8bf9?w=1600&q=80&fit=crop" alt="Plato emplatado sobre fondo blanco" fetchpriority="high">
+    </div>
+    <div class="piedra">
+      <div class="placa" role="img" aria-label="Joyca, Asador - Restaurante">
+        <b>Joyca</b><i></i><span>Asador - Restaurante</span>
+      </div>
+      <div class="hero-texto">
+        <h1>Producto de aquí, cocinado según la temporada.</h1>
+        <p>Comidas y cenas los fines de semana en Carrer General Prim, 33, Carcaixent.</p>
+        <div class="hero-botones">
+          <a class="btn btn-viola" href="tel:+34685746752">Reservar mesa</a>
+          <a class="btn btn-linea" href="#cocina">Ver la cocina</a>
+        </div>
+        <span class="estado" id="estado" aria-live="polite">Consultando horario</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="confianza">
+    <ul>
+      <li><strong>4,7 <span class="estrellas" aria-hidden="true">★★★★★</span></strong>204 reseñas en Google</li>
+      <li><strong>30-40 €</strong>por persona</li>
+      <li><strong>Salón privado</strong>aparte del comedor</li>
+      <li><strong>Para llevar</strong>y también a domicilio</li>
+      <li><strong>Accesible</strong>en silla de ruedas</li>
+    </ul>
+  </div>
+
+  <section class="bloque" id="cocina">
+    <div class="wrap">
+      <h2 class="h2">La cocina</h2>
+      <p class="intro">Platos que han pasado por nuestro Instagram: verdura y pescado de temporada, carnes a la brasa y postres que juegan a parecer otra cosa.</p>
+
+      <div class="estrella">
+        <figure><img src="https://images.unsplash.com/photo-1477921510058-85812315a3c4?w=1200&q=80&fit=crop" alt="Tomate y burrata en plato blanco" loading="lazy"></figure>
+        <div>
+          <h3>Falso mini tomatito de burrata y albahaca</h3>
+          <p>Por fuera parece un tomate; por dentro es burrata con albahaca.</p>
+          <span class="cita-ig">«Fue un falso mini tomatito de burrata y albahaca»<small>En nuestro Instagram, octubre de 2025</small></span>
+          <p class="precio edit" style="margin-top:22px">12 €</p>
+        </div>
+      </div>
+
+      <div class="platos">
+        <article class="plato">
+          <figure><img src="https://images.unsplash.com/photo-1588168333986-5078d3ae3976?w=800&h=800&q=80&fit=crop" alt="Carne a la brasa con el centro rosado" loading="lazy"></figure>
+          <div class="plato-cab"><h3>Carnes a la brasa</h3><span class="precio edit">desde 18 €</span></div>
+          <p>La especialidad de la casa, según las reseñas de Google. <span class="edit">Pregunta qué cortes hay esta semana.</span></p>
+        </article>
+        <article class="plato">
+          <figure><img src="https://images.unsplash.com/photo-1695555242924-3af544f151ac?w=800&h=800&q=80&fit=crop" alt="Pescado con salsa en plato blanco" loading="lazy"></figure>
+          <div class="plato-cab"><h3>Salmonete con setas</h3><span class="precio edit">19 €</span></div>
+          <p>Salmonete sobre setas y su jugo.</p>
+          <span class="temp">Otoño</span>
+        </article>
+        <article class="plato">
+          <figure><img src="https://images.unsplash.com/photo-1615368255396-752c69784041?w=800&h=800&q=80&fit=crop" alt="Alcachofas en plato blanco" loading="lazy"></figure>
+          <div class="plato-cab"><h3>Alcachofa con jamón</h3><span class="precio edit">11 €</span></div>
+          <p>Alcachofa entera con una loncha de jamón y aceite de hierbas.</p>
+          <span class="temp">Primavera</span>
+        </article>
+        <article class="plato">
+          <figure><img src="https://images.unsplash.com/photo-1671022312142-d2de87bc4cc7?w=800&h=800&q=80&fit=crop" alt="Plato de calabaza asada" loading="lazy"></figure>
+          <div class="plato-cab"><h3>Calabaza de temporada</h3><span class="precio edit">7 €</span></div>
+          <p>Calabaza con pipas, crema y flor de pensamiento.</p>
+          <span class="temp">Otoño</span>
+        </article>
+        <article class="plato">
+          <figure><img src="https://images.unsplash.com/photo-1703849133132-98c23595b981?w=800&h=800&q=80&fit=crop" alt="Postre con fruta, helado y flores" loading="lazy"></figure>
+          <div class="plato-cab"><h3 class="edit">Naranja y teja de panal</h3><span class="precio edit">7 €</span></div>
+          <p>Naranja, helado y una teja crujiente en forma de panal, con flor comestible.</p>
+        </article>
+        <article class="plato">
+          <figure><img src="https://images.unsplash.com/photo-1641424795072-a108a63c4b1c?w=800&h=800&q=80&fit=crop" alt="Postre de chocolate con fruta" loading="lazy"></figure>
+          <div class="plato-cab"><h3 class="edit">Manzana de chocolate</h3><span class="precio edit">7 €</span></div>
+          <p>Una manzana que es chocolate, con su hoja de menta, sobre tierra crujiente.</p>
+        </article>
+      </div>
+      <p class="nota-carta">La carta cambia con la temporada. Para saber qué hay este fin de semana, llámanos.</p>
+    </div>
+  </section>
+
+  <section class="bloque temporada" id="temporada">
+    <div class="wrap">
+      <h2 class="h2">Lo que toca en cada momento</h2>
+      <p class="intro">Trabajamos con alimentos de proximidad, por nuestra salud y por la economía local. Lo vamos contando en Instagram, estación a estación:</p>
+      <div class="anyo">
+        <div class="estacion">
+          <h3>Primavera</h3>
+          <blockquote>«Aprovechemos los últimos días de temporada de la alcachofa y las habitas.»</blockquote>
+          <small>Junio de 2019</small>
+        </div>
+        <div class="estacion">
+          <h3>Otoño</h3>
+          <blockquote>«Otoño, temporada de setas y de salmonetes.»</blockquote>
+          <small>Octubre de 2023</small>
+        </div>
+        <div class="estacion">
+          <h3>Invierno</h3>
+          <blockquote>«Todo listo para despedir el año.»</blockquote>
+          <small>Diciembre de 2023</small>
+        </div>
+        <div class="estacion">
+          <h3>Y siempre</h3>
+          <blockquote>«La calabaza es siempre la protagonista de la temporada.»</blockquote>
+          <small>Noviembre de 2025</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque" id="salon">
+    <div class="wrap salon">
+      <figure><img src="https://images.unsplash.com/photo-1604931920035-e6316baed0e3?w=1200&q=80&fit=crop" alt="Comedor con mantel blanco y sillas de madera" loading="lazy"></figure>
+      <div>
+        <h2 class="h2">Salón privado</h2>
+        <p class="intro">Mantel blanco, sillas de madera y un salón aparte del comedor para cuando queréis estar a vuestro aire.</p>
+        <p class="intro edit">Capacidad y condiciones: a consultar.</p>
+        <div class="hero-botones">
+          <a class="btn btn-viola" href="tel:+34685746752">Preguntar por el salón</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque" id="reservar" style="padding-top:0">
+    <div class="wrap">
+      <h2 class="h2">Reservar o pedir</h2>
+      <ol class="pasos">
+        <li><h3>Llama al 685 74 67 52</h3><p>Dinos día, hora y cuántos sois. <span class="edit">También por WhatsApp.</span></p></li>
+        <li><h3>Elige comida o cena</h3><p>Sábado a mediodía y por la noche; domingo a mediodía.</p></li>
+        <li><h3>Ven, o te lo llevamos</h3><p>Comer en el restaurante, recogerlo para llevar o pedirlo a domicilio. <span class="edit">Zona de reparto a consultar.</span></p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="bloque resenas" id="resenas">
+    <div class="wrap">
+      <h2 class="h2">Lo que dicen al salir</h2>
+      <p class="intro">4,7 de media en 204 reseñas de Google.</p>
+      <div class="lista-resenas">
+        <figure class="resena">
+          <span class="estrellas" aria-label="5 estrellas">★★★★★</span>
+          <blockquote>«Un buen lugar con especialidad de carnes a la brasa. Un servicio muy atento y amable. Deja hueco para alguno de sus postres caseros, todos los que pedimos muy buenos. Repetiremos seguro.»</blockquote>
+          <figcaption>Reseñas de Google</figcaption>
+        </figure>
+        <figure class="resena">
+          <span class="estrellas" aria-label="5 estrellas">★★★★★</span>
+          <blockquote>«Todo perfecto y buenísimo, hasta el chef. Tanto calidad como presentación, recomendable.»</blockquote>
+          <figcaption>Reseñas de Google</figcaption>
+        </figure>
+        <figure class="resena">
+          <span class="estrellas" aria-label="5 estrellas">★★★★★</span>
+          <blockquote>«Hemos ido varias veces y siempre nos han tratado de forma excepcional.»</blockquote>
+          <figcaption>Reseñas de Google</figcaption>
+        </figure>
+      </div>
+      <a class="btn btn-linea ver-google" href="https://www.google.com/maps/search/?api=1&query=Asador+Joyca+Restaurante+Carcaixent" target="_blank" rel="noopener">Ver todas en Google</a>
+    </div>
+  </section>
+
+  <section class="bloque" id="instagram">
+    <div class="wrap">
+      <div class="cab-galeria">
+        <div>
+          <h2 class="h2">@asadorjoyca</h2>
+          <p class="intro">Lo que sale de la cocina, plato a plato.</p>
+        </div>
+        <a class="btn btn-linea" href="https://www.instagram.com/asadorjoyca/" target="_blank" rel="noopener">Síguenos en Instagram</a>
+      </div>
+      <div class="galeria">
+        <a href="https://www.instagram.com/asadorjoyca/" target="_blank" rel="noopener" aria-label="Instagram de Joyca"><img src="https://images.unsplash.com/photo-1689672235501-6dc1e56d454c?w=500&h=500&q=75&fit=crop" alt="" loading="lazy"></a>
+        <a href="https://www.instagram.com/asadorjoyca/" target="_blank" rel="noopener" aria-label="Instagram de Joyca"><img src="https://images.unsplash.com/photo-1772198537624-5501e3667457?w=500&h=500&q=75&fit=crop" alt="" loading="lazy"></a>
+        <a href="https://www.instagram.com/asadorjoyca/" target="_blank" rel="noopener" aria-label="Instagram de Joyca"><img src="https://images.unsplash.com/photo-1676471932681-45fa972d848a?w=500&h=500&q=75&fit=crop" alt="" loading="lazy"></a>
+        <a href="https://www.instagram.com/asadorjoyca/" target="_blank" rel="noopener" aria-label="Instagram de Joyca"><img src="https://images.unsplash.com/photo-1676808527792-2c6937102a99?w=500&h=500&q=75&fit=crop" alt="" loading="lazy"></a>
+        <a href="https://www.instagram.com/asadorjoyca/" target="_blank" rel="noopener" aria-label="Instagram de Joyca"><img src="https://images.unsplash.com/photo-1759277513194-fee965299c48?w=500&h=500&q=75&fit=crop" alt="" loading="lazy"></a>
+        <a href="https://www.instagram.com/asadorjoyca/" target="_blank" rel="noopener" aria-label="Instagram de Joyca"><img src="https://images.unsplash.com/photo-1676471926534-d5c9771909fa?w=500&h=500&q=75&fit=crop" alt="" loading="lazy"></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque visita" id="visita">
+    <div class="wrap">
+      <h2 class="h2">Horario y cómo llegar</h2>
+      <p class="intro">Abrimos sábado y domingo. Entre semana, cerrado.</p>
+      <div class="visita-grid">
+        <div>
+          <table class="horario" aria-label="Horario semanal">
+            <tbody>
+              <tr data-dia="1" class="cerrado"><th>Lunes</th><td>Cerrado</td></tr>
+              <tr data-dia="2" class="cerrado"><th>Martes</th><td>Cerrado</td></tr>
+              <tr data-dia="3" class="cerrado"><th>Miércoles</th><td>Cerrado</td></tr>
+              <tr data-dia="4" class="cerrado"><th>Jueves</th><td>Cerrado</td></tr>
+              <tr data-dia="5" class="cerrado"><th>Viernes</th><td>Cerrado</td></tr>
+              <tr data-dia="6"><th>Sábado</th><td>13:30 a 17:00<br>21:00 a 23:30</td></tr>
+              <tr data-dia="0"><th>Domingo</th><td>13:30 a 16:30</td></tr>
+            </tbody>
+          </table>
+          <div class="datos">
+            <div><span>Dirección</span>Carrer General Prim, 33, 46740 Carcaixent (Valencia)</div>
+            <div><span>Teléfono</span><a href="tel:+34685746752">685 74 67 52</a></div>
+          </div>
+          <div class="botones">
+            <a class="btn btn-wa edit" href="https://wa.me/34685746752?text=Hola%2C%20quer%C3%ADa%20reservar%20mesa%20en%20Joyca%20para%20el%20" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg>
+              Reservar por WhatsApp
+            </a>
+            <a class="btn btn-linea" href="https://www.google.com/maps/dir/?api=1&destination=Asador+Joyca+Restaurante+Carcaixent" target="_blank" rel="noopener">Cómo llegar</a>
+          </div>
+        </div>
+        <iframe class="mapa" title="Mapa: Asador Joyca en Carcaixent" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=Asador%20Joyca%20Restaurante%2C%20Carrer%20General%20Prim%2033%2C%20Carcaixent&z=16&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="wrap">
+    <a class="marca" href="#inicio"><b>Joyca</b><span>Asador - Restaurante, Carcaixent</span></a>
+    <nav aria-label="Redes">
+      <a href="https://www.instagram.com/asadorjoyca/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/asador.joyca.5" target="_blank" rel="noopener">Facebook</a>
+      <a href="tel:+34685746752">685 74 67 52</a>
+    </nav>
+    <nav aria-label="Legal">
+      <a href="#" class="edit">Aviso legal</a>
+      <a href="#" class="edit">Privacidad</a>
+      <a href="#" class="edit">Cookies</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="barra" aria-label="Acciones rápidas">
+  <a class="btn btn-linea" href="tel:+34685746752">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>
+    Llamar
+  </a>
+  <a class="btn btn-viola" href="tel:+34685746752">Reservar mesa</a>
+</div>
+
+<section class="duenyo" aria-label="Notas para el propietario">
+  <div class="wrap">
+    <span class="aviso">Esta franja no aparece en la web publicada</span>
+    <h2>Por qué una web propia para Joyca</h2>
+    <ul>
+      <li><b>Salir cuando buscan «restaurante en Carcaixent»</b>Ahora mismo en Google no tenéis web enlazada; la ficha pide «Agregar sitio web». Con esta, quien busque dónde comer el fin de semana os encuentra con carta, horario y teléfono.</li>
+      <li><b>Un 4,7 con 204 reseñas, bien a la vista</b>Es una valoración muy alta. Aquí se ve nada más entrar, junto a lo que dicen de la brasa, los postres y el trato.</li>
+      <li><b>Reservas y pedidos directos</b>Llamar o escribir desde el móvil en un toque, para comer allí, para llevar o a domicilio, sin plataformas que se lleven comisión.</li>
+      <li><b>Platos de temporada fáciles de cambiar</b>Vuestra cocina cambia con la estación; la carta y el horario se actualizan en minutos, y el salón privado tiene su propio apartado.</li>
+    </ul>
+    <button type="button" id="resaltar">Resaltar datos a confirmar</button>
+  </div>
+</section>
+
+<script>
+(function(){
+  // Horario según Google Maps (0 = domingo)
+  var horario = {
+    0: [[13*60+30, 16*60+30]],
+    6: [[13*60+30, 17*60], [21*60, 23*60+30]]
+  };
+  var dias = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+  function ahoraMadrid(){
+    var p = new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Madrid',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+    var o = {}; p.forEach(function(x){o[x.type]=x.value;});
+    var mapa = {Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+    return {dia: mapa[o.weekday], min: (parseInt(o.hour,10)%24)*60 + parseInt(o.minute,10)};
+  }
+  function hhmm(m){return String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0');}
+  function estado(){
+    var a = ahoraMadrid(), el = document.getElementById('estado');
+    var hoy = horario[a.dia] || [];
+    for (var i=0;i<hoy.length;i++){
+      if (a.min >= hoy[i][0] && a.min < hoy[i][1]){ el.textContent = 'Abierto ahora, hasta las '+hhmm(hoy[i][1]); el.classList.add('abierto'); return; }
+      if (a.min < hoy[i][0]){ el.textContent = 'Hoy abrimos a las '+hhmm(hoy[i][0]); el.classList.remove('abierto'); return; }
+    }
+    for (var d=1; d<=7; d++){
+      var n = (a.dia+d)%7;
+      if (horario[n]){ el.textContent = 'Cerrado ahora. Abrimos el '+(d===1?'mañana':dias[n])+' a las '+hhmm(horario[n][0][0]); el.classList.remove('abierto'); return; }
+    }
+  }
+  estado(); setInterval(estado, 60000);
+  var fila = document.querySelector('.horario tr[data-dia="'+ahoraMadrid().dia+'"]');
+  if (fila) fila.classList.add('hoy');
+
+  document.getElementById('resaltar').addEventListener('click', function(){
+    var on = document.body.classList.toggle('ver-editables');
+    this.textContent = on ? 'Ocultar datos a confirmar' : 'Resaltar datos a confirmar';
+  });
+})();
+</script>
+</body>
+</html>
